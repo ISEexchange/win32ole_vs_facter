@@ -1,0 +1,36 @@
+*~
+*.swp
+*.orig
+*.bak
+*.old
+CHANGELOG
+Gemfile.lock
+# hiera-puppet is included with some versions of puppet
+modules/*/spec/fixtures/modules/hiera-puppet
+modules/hiera-puppet/
+.bundle/
+# Ignoring files for modules/gts/files/ops-scripts/
+*.pyc
+*.pyo
+modules/*/coverage
+# ---------------------------------------------------------
+# work around http://projects.puppetlabs.com/issues/11191
+# also see https://github.com/rodjek/rspec-puppet/issues/15
+spec/fixtures/manifests/site.pp
+# ---------------------------------------------------------
+
+# YARD generated documentation
+.yardoc
+doc/
+
+# http://c9.io web-based editor craps on your directory
+.c9revisions/
+
+# NUnit outputs xml files intended for CI consumption
+modules/acceptance/files/pesters/*.xml
+
+# output dir created by rcov and simplecov
+coverage/
+
+# output file created by mpstat in .travis.yml
+nohup.out
