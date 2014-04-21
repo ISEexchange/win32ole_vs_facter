@@ -1,0 +1,29 @@
+---
+language: ruby
+rvm:
+  - 2.0.0
+
+cache:
+- bundler
+- apt
+
+env:
+  - FACTER_VER='~> 2.0'
+  - FACTER_VER='<= 1.7.2'
+
+matrix:
+  fast_finish: false
+
+before_install:
+  - date --rfc-3339=seconds --utc
+  - gem --version
+
+before_script:
+  - git config user.email 'nobody@localhost.invalid'
+  - git config user.name  'travis-ci'
+
+script:
+  - script/test
+
+after_script:
+  - date --rfc-3339=seconds --utc
