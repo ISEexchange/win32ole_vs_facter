@@ -8,8 +8,10 @@ cache:
 - apt
 
 env:
-  - FACTER_VER='~> 2.0'
-  - FACTER_VER='<= 1.7.2'
+  - FACTER_VER='<= 1.7.2' SCRIPT='script/test'
+  - FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'
+  - FACTER_VER='~> 2.0' SCRIPT='script/test'
+  - FACTER_VER='~> 2.0' SCRIPT='script/mintest'
 
 matrix:
   fast_finish: false
@@ -23,7 +25,7 @@ before_script:
   - git config user.name  'travis-ci'
 
 script:
-  - script/test
+  - $SCRIPT
 
 after_script:
   - date --rfc-3339=seconds --utc
