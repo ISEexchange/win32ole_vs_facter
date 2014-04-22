@@ -7,9 +7,6 @@ rescue
   require 'bundler/setup'
 end
 
-require 'rake'
-require 'rake/dsl_definition'
-require 'rspec/core/rake_task'
 require 'puppetlabs_spec_helper/rake_tasks'
 
 require 'rubocop/rake_task'

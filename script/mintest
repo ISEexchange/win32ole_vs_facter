@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "===> Bundling..."
+script/bootstrap
+
+echo "===> Touch site.pp fixture"
+mkdir -p spec/fixtures/manifests 2> /dev/null
+touch spec/fixtures/manifests/site.pp
+
+echo "===> Running rspec"
+bundle exec rake rubocop
+bundle exec ruby -S rspec spec/classes/windows_spec.rb
