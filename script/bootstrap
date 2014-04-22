@@ -1,21 +1,8 @@
 #!/bin/bash
-
 set -e
+source $(dirname $0)/config
+pushd $repo_root 2> /dev/null
 
-function err() {
-  echo "[ERROR] $1" >&2
-  exit 1
-}
-
-function smitty() {
-  echo; echo
-  echo "[INFO] $@"
-  $@
-}
-
-bundle_dir="~/.bundle"
-
-git remote show upstream &> /dev/null || smitty git remote add upstream git@github.com:ISEexchange/win32ole_vs_facter.git
-smitty rm -fr $bundle_dir
-smitty rm -fr Gemfile.lock
-smitty bundle update 2> /dev/null || smitty bundle install --path=$bundle_dir
+git remote show upstream &> /dev/null || smitty git remote add upstream $upstream
+smitty git submodule update --init --recursive
+$repo_root/script/bundle

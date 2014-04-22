@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+function err() {
+  echo "[ERROR] $1" >&2
+  exit 1
+}
+
+function smitty() {
+  echo; echo
+  echo "[INFO] $@"
+  $@
+}
+
+bundle_dir="~/.bundle"
+upstream="git@github.com:ISEexchange/win32ole_vs_facter.git"
+repo_root="$(dirname $0)/.."
