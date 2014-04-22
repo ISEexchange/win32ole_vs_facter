@@ -30,14 +30,17 @@ Actual
 
 Build Matrix
 
-| Job | Duration | Finished       | Ruby  | ENV                                                             |
-|-----|----------|----------------|-------|-----------------------------------------------------------------|
-|8.1  | 51 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/test'     |
-|8.2  | 52 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'  |
-|8.3  | 55 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/test'       |
-|8.4  | 52 sec   | 15 minutes ago | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'           |
-|14.5 | 3 min    | 15 minutes ago | 2.0.0 | :bangbang: FACTER_VER='bisect' SCRIPT='script/bisect'           |
-|15.6 | 52 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes |
+| Job | Ruby  | ENV                                                                       |
+|-----|-------|---------------------------------------------------------------------------|
+|  1  | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/test'               |
+|  2  | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'            |
+|  3  | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/test'                 |
+|  4  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'                     |
+|  5  | 2.0.0 | :bangbang: FACTER_VER='bisect' SCRIPT='script/bisect'                     |
+|  6  | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes |
+
+:warning: The rspec fails when mocking `:kernel => 'windows'`.<br />
+This repo is a simple reproducer for a complex in-house puppet repo.
 
 :bangbang: The fifth test runs `git-bisect` against upstream
 [facter](https://github.com/puppetlabs/facter) project and
@@ -85,6 +88,3 @@ describe 'win32ole_vs_facter::windows' do
   it { should contain_notify('windows') }
 end
 ```
-
-:warning: The rspec fails when mocking `:kernel => 'windows'`.<br />
-This repo is a simple reproducer for a complex in-house puppet repo.
