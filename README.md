@@ -38,6 +38,9 @@ Build Matrix
 |  4  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'                     |
 |  5  | 2.0.0 | :bangbang: FACTER_VER='bisect' SCRIPT='script/bisect'                     |
 |  6  | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes |
+|  7  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.4'    |
+|  8  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.3'    |
+|  9  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.2'    |
 
 :warning: The rspec fails when mocking `:kernel => 'windows'`.<br />
 This repo is a simple reproducer for a complex in-house puppet repo.
@@ -51,6 +54,9 @@ to see the results.
 
 The sixth test preserves facter cache between tests,
 which makes the symptom go away.
+
+Tests 7 through 9 illustrate that version of puppetlabs_spec_helper gem
+has no effect on outcome.
 
 ref: https://magnum.travis-ci.com/ISEexchange/win32ole_vs_facter/builds/
 

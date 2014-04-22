@@ -12,6 +12,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = '0.0.0' # Leave at zero
 
+  spec_ver = ENV.key?('SPEC_VER') ? ENV['SPEC_VER'] : '~> 0.4'
+
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'mocha'
@@ -21,7 +23,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec-mocks'
   gem.add_development_dependency 'rubocop'
   gem.add_development_dependency 'puppet'
-  gem.add_development_dependency 'puppetlabs_spec_helper'
+  gem.add_development_dependency 'puppetlabs_spec_helper', spec_ver
   gem.add_development_dependency 'puppet-lint'
   gem.add_development_dependency 'rspec-puppet'
   gem.add_development_dependency 'friction'
