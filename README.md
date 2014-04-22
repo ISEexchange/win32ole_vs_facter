@@ -28,19 +28,7 @@ Actual
 
 `rake spec` passes, but `ruby -S rspec spec/classes/windows_spec.rb` fails.
 
-Build Matrix
-
-| Job | Ruby  | ENV                                                                       |
-|-----|-------|---------------------------------------------------------------------------|
-|  1  | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/test'               |
-|  2  | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'            |
-|  3  | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/test'                 |
-|  4  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'                     |
-|  5  | 2.0.0 | :bangbang: FACTER_VER='bisect' SCRIPT='script/bisect'                     |
-|  6  | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes |
-|  7  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.4'    |
-|  8  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.3'    |
-|  9  | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest' SPEC_VER='< 0.2'    |
+![build matrix](https://cloud.githubusercontent.com/assets/332496/2769838/924a64cc-ca56-11e3-9180-884cd6c6c0d9.png)
 
 :warning: The rspec fails when mocking `:kernel => 'windows'`.<br />
 This repo is a simple reproducer for a complex in-house puppet repo.
