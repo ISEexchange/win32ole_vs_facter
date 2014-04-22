@@ -30,12 +30,12 @@ Actual
 
 Build Matrix
 
-| Job | Duration | Finished       | Ruby  | ENV                                            |
-|-----|----------|----------------|-------|------------------------------------------------|
-|8.1  | 51 sec   | 15 minutes ago | 2.0.0 | FACTER_VER='<= 1.7.2' SCRIPT='script/test'     |
-|8.2  | 52 sec   | 15 minutes ago | 2.0.0 | FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'  |
-|8.3  | 55 sec   | 15 minutes ago | 2.0.0 | FACTER_VER='~> 2.0' SCRIPT='script/test'       |
-|8.4  | 52 sec   | 15 minutes ago | 2.0.0 | FACTER_VER='~> 2.0' SCRIPT='script/mintest'    |
+| Job | Duration | Finished       | Ruby  | ENV                                                             |
+|-----|----------|----------------|-------|-----------------------------------------------------------------|
+|8.1  | 51 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/test'     |
+|8.2  | 52 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'  |
+|8.3  | 55 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/test'       |
+|8.4  | 52 sec   | 15 minutes ago | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'           |
 
 
 ref: https://magnum.travis-ci.com/ISEexchange/win32ole_vs_facter/builds/3483413
