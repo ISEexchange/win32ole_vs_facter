@@ -13,6 +13,7 @@ env:
   - FACTER_VER='~> 2.0' SCRIPT='script/test'
   - FACTER_VER='~> 2.0' SCRIPT='script/mintest'
   - FACTER_VER='bisect' SCRIPT='script/bisect'
+  - FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes
 
 matrix:
   fast_finish: false
