@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-
 set -e
+source $(dirname $0)/config
+pushd $repo_root 2> /dev/null
 
 echo "===> Bundling..."
-script/bootstrap
+script/bundle
 
 echo "===> Touch site.pp fixture"
 mkdir -p spec/fixtures/manifests 2> /dev/null
 touch spec/fixtures/manifests/site.pp
 
 echo "===> Running rspec"
-bundle exec rake rubocop
 bundle exec ruby -S rspec spec/classes/windows_spec.rb

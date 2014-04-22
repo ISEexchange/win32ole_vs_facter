@@ -1,0 +1,15 @@
+#!/bin/bash
+source $(dirname $0)/config
+pushd $repo_root/facter 2> /dev/null
+git bisect start
+
+# head
+git bisect bad 60677bd516a14362bcb66e5ab2605050e3757bec
+
+# 1.7.2
+git bisect good 2027595b79c97e218c1d9266a7311dba07a55fa2
+
+git bisect run ../script/mintest
+
+git bisect reset
+popd &> /dev/null
