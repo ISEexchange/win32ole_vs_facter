@@ -17,7 +17,7 @@ RSpec.configure do |c|
   c.before :each do
     # don't cache facts between test cases
     Facter::Util::Loader.any_instance.stubs(:load_all)
-    Facter.clear
+    Facter.clear unless ENV.key?('PRESERVE')
     Facter.clear_messages
   end
 end

@@ -36,9 +36,18 @@ Build Matrix
 |8.2  | 52 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='<= 1.7.2' SCRIPT='script/mintest'  |
 |8.3  | 55 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/test'       |
 |8.4  | 52 sec   | 15 minutes ago | 2.0.0 | :warning: FACTER_VER='~> 2.0' SCRIPT='script/mintest'           |
+|14.5 | 3 min    | 15 minutes ago | 2.0.0 | :bangbang: FACTER_VER='bisect' SCRIPT='script/bisect'           |
+|15.6 | 52 sec   | 15 minutes ago | 2.0.0 | :checkered_flag: FACTER_VER='~> 2.0' SCRIPT='script/mintest' PRESERVE=yes |
 
+:bangbang: The fifth test runs `git-bisect` against upstream
+[facter](https://github.com/puppetlabs/facter) project and
+identifies the first bad commit as
+https://github.com/puppetlabs/facter/commit/0a8c231b4269.
 
-ref: https://magnum.travis-ci.com/ISEexchange/win32ole_vs_facter/builds/3483413
+The sixth test preserves facter cache between tests,
+which makes the symptom go away.
+
+ref: https://magnum.travis-ci.com/ISEexchange/win32ole_vs_facter/builds/
 
 
 Simple module
