@@ -13,5 +13,9 @@ function smitty() {
   $@
 }
 
+bundle_dir="~/.bundle"
+
 git remote show upstream &> /dev/null || smitty git remote add upstream git@github.com:ISEexchange/win32ole_vs_facter.git
-smitty bundle update 2> /dev/null || smitty bundle install --path=~/.bundle
+smitty rm -fr $bundle_dir
+smitty rm -fr Gemfile.lock
+smitty bundle update 2> /dev/null || smitty bundle install --path=$bundle_dir
