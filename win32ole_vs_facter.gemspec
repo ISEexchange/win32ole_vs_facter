@@ -25,7 +25,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'puppet-lint'
   gem.add_development_dependency 'rspec-puppet'
   gem.add_development_dependency 'friction'
-
-  facter_ver = ENV.key?('FACTER_VER') ? ENV['FACTER_VER'] : '~> 2.0'
-  gem.add_development_dependency 'facter', facter_ver
 end
