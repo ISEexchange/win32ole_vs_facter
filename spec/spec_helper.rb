@@ -2,6 +2,7 @@ require 'minitest'
 require 'mocha/setup'
 require 'rspec-puppet'
 require 'English'
+require 'puppetlabs_spec_helper/puppetlabs_spec_helper'
 
 RSpec.configure do |c|
   c.mock_with 'mocha'
