@@ -16,6 +16,9 @@ RSpec.configure do |c|
   c.manifest_dir = File.join(fixture_path, 'manifests')
 
   c.before :each do
+    # We only run tests on Linux, so put a nail in win32ole loaderr.
+    Facter::Util::Config.stubs(:is_windows?).returns false
+
     # don't cache facts between test cases
     Facter::Util::Loader.any_instance.stubs(:load_all)
     Facter.clear unless ENV.key?('PRESERVE')
